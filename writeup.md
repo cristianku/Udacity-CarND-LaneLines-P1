@@ -30,7 +30,7 @@ It uses OpenCV :
 
 ### 2. Gaussian smoothing
 
-Using Gaussian filtering with Kernel = 5 pixels to smooth the image
+Using Gaussian filtering with Kernel = 3 pixels to smooth the image
 
 and remove unuseful details
 
@@ -44,8 +44,22 @@ Canny filter detect edges calculating the derivatives of the color change
 between point to point. When the derivative is increasing rapidly, then an edge
 will be detected
 
-I can use the Canny filter to detect image Edges, using a low_threshold = 30 and
-high_threshold = 50 \* 3 = 150 ( three times the low as Reccomended )
+I can use the Canny filter to detect image Edges
+
+To Calculate the low_threshold and high_threshold , I am now taking the Median
+Value of the Gray image and then I apply the formula:
+
+ 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+low threshold  = 0.66*[mean value] 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+high threshold = 1.33*[mean value]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
 
 If a pixel value is greater then the high_threshold it is marked as a strong
 edge pixel, if a pixel value is lower than low_threshold is is simply removed
@@ -126,7 +140,7 @@ You can see the result in [test_images_output](test_images_output) folder:
  
 
 **TEST ON** [solidWhiteRight.mp4]\*\* VIDEO\*\*
---------------------------------------------
+-----------------------------------------------
 
 In order to test on Videos, a new function containing the Pipeline is defined:
 **process_image(image).**
@@ -264,9 +278,9 @@ I wanted to calculate the bottom x -position starting the well-known y-position
  
 
 **TEST ON** solidYellowLeft.mp4\*\* VIDEO\*\*
-------------------------------------------
+---------------------------------------------
 
-This video shows the **STABILITY**  of the drawed lined using the modified
+This video shows the **STABILITY** of the drawed lined using the modified
 **Draw_line** function
 
 Input video: [test_videos/solidYellowLeft.mp4](test_videos/solidYellowLeft.mp4)
