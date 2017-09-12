@@ -94,13 +94,13 @@ Here the Parameters used:
 
 `theta = np.pi/180 # in degree --> we choose 1 degree`
 
-`threshold = 15  #--> meaning at least 15 points in`
+`threshold = 60 #--> meaning at least 15 points in`
 
 `#    image space need to be associated with each line segment`
 
-`min_line_len = 30`
+`min_line_len = 100`
 
-`max_line_gap = 20`
+`max_line_gap = 100`
 
  
 
@@ -341,3 +341,35 @@ def calc_vertices( img):
 **See the result here:**
 
 [test_videos/challenge.mp4](test_videos/challenge.mp4)
+
+ 
+
+**SHORTCOMINGS​**
+----------------
+
+My Pipeline works well on straight line, but will not work well for curved
+lines.
+
+When Hough doesnt return any lines, instead of drawing nothing, it should use
+the previous lane line ( \* resolved )
+
+The low and high threshold in Canny filter could be automatically detected ( \*
+resolved )
+
+**Suggestions for improving this algorithm**
+--------------------------------------------
+
+This algorythm has already been improved regarding:
+
+-   automatic Low and High threshold in Canny filter calculation [see
+    here](http://www.kerrywong.com/2009/05/07/canny-edge-detection-auto-thresholding/)
+
+-   “memory” --\> the previous Lane is stored in order to :
+
+    -   use it in case of absence in the current
+
+    -   averaging with the current line
+
+This algorythm has not been improved regarding the curved line, need some more
+study here :[ROBUST AND REAL TIME DETECTION OF CURVY LANES
+](http://airccj.org/CSCP/vol5/csit53211.pdf)
