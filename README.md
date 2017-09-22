@@ -2,7 +2,9 @@
 
 ** PROJECT PASSED *** ! 
 
-here you can read the Udacity Team review ! : https://review.udacity.com/?utm_medium=email&utm_campaign=reviewsapp-submission-reviewed&utm_source=blueshift&utm_content=reviewsapp-submission-reviewed&bsft_clkid=0dcec25c-9cec-4141-b310-485d6804eb23&bsft_uid=f4037989-f98e-4de4-a4f8-583c6a056b46&bsft_mid=f1e91876-f8d8-4319-a79c-3e56228df920&bsft_eid=6f154690-7543-4582-9be7-e397af208dbd&bsft_txnid=877c6cc3-c3c9-4104-8434-9974c6adff5e#!/reviews/731755
+here you can read the Udacity Team review ! : 
+https://review.udacity.com/#!/reviews/731755/shared
+
 
 **Finding Lane Lines on the Road**
 ==================================
